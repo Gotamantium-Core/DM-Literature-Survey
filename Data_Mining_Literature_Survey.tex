@@ -1,0 +1,64 @@
+\documentclass[12pt, a4paper]{report}
+
+\usepackage[a4paper,left=3cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+
+\begin{document}
+
+\chapter{Introduction}
+
+% introduction stuff
+
+
+\chapter{Literature Review}
+
+\section{A Novel Method for Detecting Credit Card Fraud Problems}
+
+Du et al.~\cite{du2024novel} proposed a novel machine learning framework for credit card fraud detection that addresses the severe class imbalance present in financial transaction datasets. In credit card transaction data, legitimate transactions vastly outnumber fraudulent transactions, making it difficult for conventional machine learning models to accurately identify fraudulent activity. The authors note that conventional oversampling techniques such as the Synthetic Minority Oversampling Technique (SMOTE) may generate unrealistic or overly generalized minority-class samples. To overcome these limitations, the authors proposed a combined approach named AE-XGB-SMOTE-CGAN.
+
+The study used a publicly available credit card transaction dataset containing 284,807 transactions collected over two days in September 2013, of which only 492 were identified as fraudulent. The dataset contains anonymized features, including PCA-transformed variables, along with a class label indicating whether a transaction is fraudulent or legitimate. Fraudulent transactions are represented by the label 1, while legitimate transactions are represented by 0.
+
+The proposed AE-XGB-SMOTE-CGAN framework combines four major components: an Autoencoder, Extreme Gradient Boosting (XGBoost), SMOTE, and a Conditional Generative Adversarial Network (CGAN). SMOTE is initially used to address the severe class imbalance by generating additional minority-class samples. The information obtained from these samples is then transferred to the CGAN to generate more diverse synthetic samples. The Autoencoder subsequently learns a lower-dimensional representation of the transaction data, and the resulting feature representation is provided to the XGBoost classifier. The final classification is based on the probability produced by the XGBoost model.
+
+The authors evaluated the proposed method using Accuracy (ACC), True Positive Rate (TPR), True Negative Rate (TNR), and Matthews Correlation Coefficient (MCC). The proposed approach was compared with conventional machine learning techniques, including XGBoost, K-Nearest Neighbors (KNN), and Random Forest. The results demonstrated that AE-XGB-SMOTE-CGAN achieved approximately a 2\% improvement in accuracy compared with XGBoost and KNN. Furthermore, when the classification threshold was set to 0.35, the proposed method achieved an MCC approximately 8\% higher than XGBoost and 30\% higher than KNN.
+
+The main contribution of the study is the integration of oversampling, generative modelling, representation learning, and gradient-boosted classification into a single fraud detection framework. By combining these techniques, the proposed method improves the handling of highly imbalanced transaction data while achieving better fraud detection performance than the conventional approaches considered in the study.
+
+Overall, the paper demonstrates that combining multiple data mining and machine learning techniques can improve the detection of fraudulent credit card transactions, particularly in datasets where fraudulent transactions represent only a very small fraction of the total data.
+
+
+
+\section{Credit Card Fraud Detection via Intelligent Sampling and Self-supervised Learning}
+
+% Paper 2
+
+
+\section{Paper 3 Title}
+
+% Paper 3
+
+
+\chapter{Comparative Analysis}
+
+% comparison table/discussion
+
+
+\chapter{Research Gap}
+
+% gaps identified from the papers
+
+
+\chapter{Conclusion}
+
+% conclusion
+
+
+\chapter*{References}
+\addcontentsline{toc}{chapter}{References}
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+
+
+\end{document}
