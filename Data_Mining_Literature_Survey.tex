@@ -26,16 +26,20 @@ The main contribution of the study is the integration of oversampling, generativ
 
 Overall, the paper demonstrates that combining multiple data mining and machine learning techniques can improve the detection of fraudulent credit card transactions, particularly in datasets where fraudulent transactions represent only a very small fraction of the total data.
 
+\section{An AutoEncoder Enhanced Light Gradient Boosting Machine Method for Credit Card Fraud Detection}
+Ding et al.~\cite{ding2024autoencoder} proposed a hybrid approach named AEELG (AutoEncoder Enhanced LightGBM) for credit card fraud detection. This method addresses the limitations of single machine learning models, which struggle to accurately and efficiently identify anomalous transactions as financial datasets grow in scale and dimensionality. The authors highlight that standard approaches suffer heavily from the extreme class imbalance inherently present in credit card data, where legitimate transactions vastly outnumber fraudulent ones.
 
+The primary evaluation of this study utilized a credit card fraud dataset containing 31 features. Furthermore, to test the model's robustness in high-dimensional spaces, the researchers validated their approach on a secondary dataset consisting of 200 features.
 
-\section{Credit Card Fraud Detection via Intelligent Sampling and Self-supervised Learning}
+The AEELG framework integrates unsupervised feature reconstruction with a robust supervised classifier. Initially, the Synthetic Minority Oversampling Technique (SMOTE) is applied to balance the raw training data. An unsupervised AutoEncoder is then used to automatically learn optimal feature representations and extract deep, latent patterns without relying on labeled data. These enhanced features are subsequently passed into a LightGBM (Gradient Boosting Decision Tree) algorithm for the final classification. During the experimental setup, the AutoEncoder was trained to reconstruct features across different thresholds, ultimately selecting a threshold of 2 based on Matthews Correlation Coefficient (MCC) scores.
 
-% Paper 2
+The performance of the AEELG framework was tested against 22 other algorithms and evaluated across nine different sampling techniques, including oversampling, undersampling, and mixed sampling. To objectively evaluate the imbalanced data, the authors utilized seven evaluation metrics: Precision, Recall, Accuracy, F-measure, Area Under the Curve (AUC), MCC, and Balanced Classification Rate (BCR).
 
+The results demonstrated that AEELG significantly outperformed the other models. On the 31-feature dataset, the proposed method achieved a recall of 94.85\%, representing an approximate 10\% improvement over compared models, alongside a BCR score of 97\%. The main advantage of this model is its ability to inherit the benefits of both core components. It eliminates the heavy reliance on annotated data for optimal feature extraction while maintaining the fast, accurate classification capabilities of LightGBM. It successfully strikes a balance by accurately detecting true anomalies while keeping false positives remarkably low.
 
-\section{Paper 3 Title}
+Despite its strong performance across comprehensive metrics, the authors noted that AEELG's precision decreased relative to some single models. This was identified as a direct trade-off of prioritizing recall via SMOTE and AutoEncoder-enhanced feature reconstruction. To address this open problem, future work proposes exploring the combination of AEELG with generative adversarial networks (GANs) to improve the quality of generated and reconstructed features, thereby enhancing classification precision.
 
-% Paper 3
+Overall, the paper demonstrates that integrating unsupervised feature reconstruction with a robust supervised classifier and SMOTE preprocessing is a highly effective and scalable way to handle severe class imbalance in financial fraud detection.
 
 
 \chapter{Comparative Analysis}
@@ -51,10 +55,6 @@ Overall, the paper demonstrates that combining multiple data mining and machine 
 \chapter{Conclusion}
 
 % conclusion
-
-
-\chapter*{References}
-\addcontentsline{toc}{chapter}{References}
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}
